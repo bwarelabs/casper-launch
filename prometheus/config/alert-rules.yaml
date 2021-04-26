@@ -52,7 +52,7 @@ groups:
       message: 'Less than one new block at 2 minutes on Casper instance {{ $labels.instance }} for the past 10m.'
 
   - alert: CasperSyncStuck
-    expr: increase(chain_height{instance="localhost:8888",job="casper"}[1m]) < 1
+    expr: increase(chain_height{instance="localhost:8888",job="casper"}[2m]) < 1
     for: 20m
     labels:
       severity: critical
