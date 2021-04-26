@@ -6,6 +6,7 @@ sudo ufw allow to any port 35000
 sudo ufw allow to any port 7777
 sudo ufw allow to any port 8888
 sudo ufw allow to any port 9999
+sudo ufw allow to any port 9090
 
 sudo expect -c 'set timeout -1;
 spawn sudo ufw enable;
