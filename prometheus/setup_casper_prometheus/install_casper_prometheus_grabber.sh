@@ -31,4 +31,4 @@ EOF
 
 sudo systemctl daemon-reload
 sudo systemctl enable casper-prometheus-exporter
-sudo systemctl start casper-prometheus-exporter
+sudo systemctl restart casper-prometheus-exporter

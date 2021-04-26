@@ -1,3 +1,80 @@
 groups:
 - name: casper.rules
   rules:
+
+  ##############################################################################
+  # RPC unavailable
+  ##############################################################################
+
+  - alert: UnavailableRPC
+    expr: up{instance="localhost:7777",job="blackbox"} == 0
+    for: 10m
+    labels:
+      severity: critical
+    annotations:
+      message: 'HTTP RPC for {{ $labels.job }} has been unavailable for 10m on instance {{ $labels.instance }}'
+
+
+  ##############################################################################
+  # RPC slow response
+  ##############################################################################
+
+  - alert: RPCSlowProbe
+    expr: avg_over_time(probe_duration_seconds{instance="localhost:7777",job="blackbox"}[1m]) > 1
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      message: 'HTTP probe for {{ $labels.job }} on {{ $labels.instance }} has been slower than 1s for more than 5m.'
+
+  ##############################################################################
+  # Service down
+  ##############################################################################
+
+  - alert: CasperDown
+    expr: up{instance="localhost:8888",job="casper"} == 0
+    for: 10m
+    labels:
+      severity: critical
+    annotations:
+      message: 'The Casper instance {{ $labels.instance }} has been down for 10m.'
+
+  ##############################################################################
+  # Block finalization
+  ##############################################################################
+
+  - alert: CasperSyncStuck
+    expr: increase(chain_height{instance="localhost:8888",job="casper"}[2m]) < 1
+    for: 10m
+    labels:
+      severity: warning
+    annotations:
+      message: 'Less than one new block at 2 minutes on Casper instance {{ $labels.instance }} for the past 10m.'
+
+  - alert: CasperSyncStuck
+    expr: increase(chain_height{instance="localhost:8888",job="casper"}[1m]) < 1
+    for: 20m
+    labels:
+      severity: critical
+    annotations:
+      message: 'Less than one new block at 2 minutes on Casper instance {{ $labels.instance }} for the past 20m.'
+
+  ##############################################################################
+  # Gossiping 
+  ##############################################################################
+
+  - alert: CasperFewPeers
+    expr: peers{instance="localhost:8888",job="casper"} < 3
+    for: 10m
+    labels:
+      severity: warning
+    annotations:
+      message: 'The relay instance {{ $labels.instance }} has less than 3 peers for more than 10 minutes'
+  
+  - alert: CasperFewPeers
+    expr: peers{instance="localhost:8888",job="casper"} < 3
+    for: 30m
+    labels:
+      severity: critical
+    annotations:
+      message: 'The relay instance {{ $labels.instance }} has less than 3 peers for more than 30 minutes'
