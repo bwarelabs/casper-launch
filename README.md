@@ -1,6 +1,6 @@
 # Casper Launch - Deploy a Casper validator - The Bware way
 
-## What do you first need to know
+## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) What do you first need to know
 
 - This repository is **NOT** an official repository offered by CasperLabs or other parties associeted directly with them.
 - The scripts were written by the **BwareLabs** team internally for easily deploying a validator node on either mainnet or testnet.
@@ -9,7 +9,7 @@
 - Feel free to clone the repository and contribute with your own improvements!
 - For other details, feel free to contact us on **Discord** (_Silviu | bwarelabs.com#8286_, _Tibi | bwarelabs.com#4803_, _Mateip | bwarelabs.com#1629_).
 
-## What does this repository contain
+## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) What does this repository contain
 
 This repository has 2 main parts:
 - The [casper-validator](/casper-validator) directory - bash scripts for deploying the Casper validator & launch a bonding request on the network
