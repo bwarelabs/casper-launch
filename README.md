@@ -18,7 +18,7 @@ This repository has 2 main parts:
 
 For official inquiries, you can contact us at <info@bwarelabs.com>.
 
-For other details, feel free to contact us on **Discord** (_Silviu | bwarelabs.com#8286_, _Tibi | bwarelabs.com#4803_, _Mateip | bwarelabs.com#1629_).
+For other details, feel free to contact us on **Discord** (_Mateip | bwarelabs.com#1629_, _Silviu | bwarelabs.com#8286_, _Tibi | bwarelabs.com#4803_).
 
 ## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) Copyright
 
