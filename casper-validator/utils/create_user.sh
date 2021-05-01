@@ -1,5 +1,6 @@
 #!/bin/bash
-export USERNAME="local"
+
+source .env
 
 user_exists(){ id "${USERNAME}" &>/dev/null; } # silent, it just sets the exit code
 if user_exists "${USERNAME}"; then  # use the function, save the code
