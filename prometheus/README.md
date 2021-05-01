@@ -38,7 +38,7 @@
 - _install_casper_prometheus_grabber.sh_ - downloads the binaries and configures the service
 - _install_prerequisites_ - installs prerequisites necessary for the build
 
-## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) How to deploy the node
+## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) How to deploy the monitoring solution
 - Carefully complete _.env_ with the appropiate values, depending on your use case
 - Carefully complete _setup_casper_prometheus/.env_ with the appropiate values, depending on your use case
 - From the _prometheus_ directory, run the following command in your terminal:
