@@ -1,4 +1,4 @@
-# [BwareLabs] Monitoring solution for Casper validator
+# ![alt text](https://github.com/bwarelabs/indexer-deployment/blob/main/docs/BWARE_yellow_gradient.png) Monitoring solution for Casper validator
 
 ## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) IMPORTANT NOTICE
 **The scripts were tested on Ubuntu 20.04 LTS machines which respect the hardware requirements imposed by CasperLabs as seen [here](https://docs.casperlabs.io/en/latest/node-operator/hardware.html).**
@@ -60,5 +60,3 @@ Copyright © 2021 [BwareLabs](https://bwarelabs.com/)
 - [Telegram](https://t.me/BwareLabsAnnouncements)
 - [Twitter](https://twitter.com/BwareLabs)
 - [Linkedin](https://www.linkedin.com/company/bwarelabs)
-
-![alt text](https://github.com/bwarelabs/indexer-deployment/blob/main/docs/BWARE_yellow_gradient.png)
