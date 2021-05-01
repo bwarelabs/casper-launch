@@ -37,6 +37,6 @@ sudo bash start_all.sh
 - Carefully complete _stake.env_ with the appropiate values, depending on your use case
 - From the ${START_DIR}, run the following command in your terminal:
 ```
-sudo bash start_all.sh
+sudo bash start_bonding.sh
 ```
 - This can be run as root, the user handling is made inside the scripts
