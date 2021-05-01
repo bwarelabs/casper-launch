@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 sudo mkdir -p /etc/blackbox
 blackbox_exporter --version && exit 0
 

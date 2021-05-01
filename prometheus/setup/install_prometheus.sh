@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 sudo mkdir -p /etc/prometheus
 sudo mkdir -p /var/lib/prometheus
 prometheus --version && exit 0

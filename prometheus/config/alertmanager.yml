@@ -1,5 +1,5 @@
 global:
-  slack_api_url: 'https://hooks.slack.com/services/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'
+  slack_api_url: 'INSERT_FROM_ENV_FILE'
 
 route:
   group_by: ['alertname', 'job']

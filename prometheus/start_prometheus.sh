@@ -1,6 +1,9 @@
-#!/usr/bin/bash
-sudo bash /home/local/casper-launch/prometheus/setup/install_prometheus.sh
-sudo cp -fR /home/local/casper-launch/prometheus/config /etc/prometheus/
+#!/bin/bash
+
+source .env
+
+sudo bash ${HOMEDIR}/casper-launch/prometheus/setup/install_prometheus.sh
+sudo cp -fR ${HOMEDIR}/casper-launch/prometheus/config /etc/prometheus/
 
 USER=$(whoami)
 cat > /etc/systemd/system/prometheus.service <<EOF

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 source setup_casper_prometheus/.env
 

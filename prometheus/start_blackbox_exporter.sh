@@ -1,6 +1,9 @@
-#!/usr/bin/bash
-sudo bash /home/local/casper-launch/prometheus/setup/install_blackbox_exporter.sh
-sudo cp -fR /home/local/casper-launch/prometheus/config /etc/blackbox
+#!/bin/bash
+
+source .env
+
+sudo bash ${HOMEDIR}/casper-launch/prometheus/setup/install_blackbox_exporter.sh
+sudo cp -fR ${HOMEDIR}/casper-launch/prometheus/config /etc/blackbox
 
 USER=$(whoami)
 cat > /etc/systemd/system/blackbox_exporter.service <<EOF

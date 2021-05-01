@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 sudo mkdir -p /etc/alertmanager
 alertmanager --version && exit 0
 
