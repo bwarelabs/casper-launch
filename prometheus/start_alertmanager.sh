@@ -2,8 +2,8 @@
 
 source .env
 
-sudo bash ${HOMEDIR}/casper-launch/prometheus/setup/install_alertmanager.sh
-sudo cp -fR ${HOMEDIR}/casper-launch/prometheus/config /etc/alertmanager/
+sudo bash setup/install_alertmanager.sh
+sudo cp -fR config /etc/alertmanager/
 
 USER=$(whoami)
 cat > /etc/systemd/system/alertmanager.service <<EOF

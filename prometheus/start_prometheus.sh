@@ -2,8 +2,8 @@
 
 source .env
 
-sudo bash ${HOMEDIR}/casper-launch/prometheus/setup/install_prometheus.sh
-sudo cp -fR ${HOMEDIR}/casper-launch/prometheus/config /etc/prometheus/
+sudo bash setup/install_prometheus.sh
+sudo cp -fR config /etc/prometheus/
 
 USER=$(whoami)
 cat > /etc/systemd/system/prometheus.service <<EOF
