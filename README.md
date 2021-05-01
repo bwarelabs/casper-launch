@@ -7,7 +7,7 @@
 - We highly recommend that you first read the [Casper Official Documentation](https://docs.casperlabs.io/en/latest/node-operator/index.html) in order to understand what is happening behind the curtains.
 - Great thanks to the **Casper community** for the [How-To-Casper](https://github.com/make-software/how-to-casperlabs) repository! This repository is offering a great summary of how to deploy a Casper validator and was the main source of inspiration for the scripts which we provide.
 - Feel free to clone the repository and contribute with your own improvements!
-- For other details, feel free to contact us on **Discord** (_Silviu | bwarelabs.com#8286_, _Tibi | bwarelabs.com#4803_, _Mateip | bwarelabs.com#1629_)
+- For other details, feel free to contact us on **Discord** (_Silviu | bwarelabs.com#8286_, _Tibi | bwarelabs.com#4803_, _Mateip | bwarelabs.com#1629_).
 
 ## What does this repository contain
 
