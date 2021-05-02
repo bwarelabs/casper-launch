@@ -11,7 +11,7 @@
 ## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) What does this repository contain
 
 This repository has 2 main parts:
-- The [casper-validator](/casper-validator) directory - bash scripts for deploying the Casper validator & launch a bonding request on the network
+- The [casper-validator](/casper-validator) directory - bash scripts for deploying the Casper validator & launch a bonding or delegating request on the network.
 - The [prometheus](/prometheus) directory - bash scripts for deploying a custom monitoring solution based on Prometheus, Alertmanager and Blackbox + the custom Prometheus Grabber for Casper which can be found [here](https://github.com/pixiemars/CasperPrometheusGrabber) (Kudos to @pixiemars!) + integration with Slack 
 
 ## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) Contact
