@@ -13,8 +13,12 @@
 - _.stake_env_ - this contains important environment variables which are needed in order to properly start a bonding request
   - **AMOUNT** - amount of CSPR tokens to be bonded by yourself (staking amount which you provide from your own wallet)
   - **DELEGATION_RATE** - fee for delegators (percentage of rewards which you will receive when producing a new block when having tokens delegated from others)
+- _.delegate_env_ - this contains important environment variables which are needed in order to properly start a delegation request
+  - **AMOUNT** - amount of CSPR tokens to be delegated (delegation amount which you provide from your own wallet)
+- _check_balance.sh_ - main script that checks balance for a known validator (either from local machine OR by providing a public key hex) - either provide a PUBLIC_KEY_HEX of a known validator, or the script will try and find the PUBLIC_KEY_HEX from your local machine (if you are running your own validator)
 - _start_all.sh_ - main script that starts the deployment of the Casper node
 - _start_bonding.sh_ - main script that starts the bonding request
+- _start_delegating.sh_ - main script that starts a delegation request (to a known validator)
 - _utils_ - directory which contains helper scripts
 
 ## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) Contents of utils directory
@@ -58,6 +62,19 @@ cd casper-launch/casper-validator
 sudo bash start_bonding.sh
 ```
 - This can be run as root, the user handling is made inside the scripts
+
+## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) How to start a delegation request
+- Go to casper-launch/casper-validator directory
+```
+cd casper-launch/casper-validator
+```
+- Carefully complete _.delegate_env_ with the appropiate values, depending on your use case
+- From the ${START_DIR}, run the following command in your terminal:
+```
+sudo bash start_delegating.sh
+```
+- This can be run as root, the user handling is made inside the scripts
+- **IMPORTANT:** You will be prompted with the PUBLIC_KEY_HEX of the validator which you want to delegate to
 
 ## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) Contact
 
