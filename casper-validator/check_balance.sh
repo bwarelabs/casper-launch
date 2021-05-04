@@ -4,7 +4,7 @@
 
 # Check input balance
 # Requirements: 'apt install jq'
-# Instruction:  'balance_check.sh <PUBLIC_KEY_HEX>'
+# Instruction:  'check_balance.sh <PUBLIC_KEY_HEX>'
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
