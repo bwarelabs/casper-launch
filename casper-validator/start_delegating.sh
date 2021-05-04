@@ -19,15 +19,11 @@ then
 fi
 
 public_hex_path="${KEY_DIR}/public_key_hex"
-echo $public_hex_path
-if nc -z -v localhost 8888; echo $? = 1
-then
-    TARGET_HOST="167.99.223.12"
-    echo -e "${GREEN}Set Target Host as $TARGET_HOST, as localhost is not a casper-node.${NC}"
-elif nc -z -v localhost 8888; echo $? = 0
-then
-    TARGET_HOST="127.0.0.1"
-fi
+
+KNOWN_ADDRESSES=$(sudo -u casper cat /etc/casper/$CASPER_VERSION/config.toml | grep known_addresses)
+KNOWN_VALIDATOR_IPS=$(grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' <<< "$KNOWN_ADDRESSES")
+IFS=' ' read -r TARGET_HOST _REST <<< "$KNOWN_VALIDATOR_IPS"
+echo "This is a known validator IP: $TARGET_HOST"
 
 PUBLIC_KEY_HEX=$(cat $public_hex_path)
 KEY_BASE_DIR=$(dirname "$public_hex_path")

@@ -6,6 +6,8 @@
 # Requirements: 'apt install jq'
 # Instruction:  'check_balance.sh <PUBLIC_KEY_HEX>'
 
+source .env
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
@@ -14,28 +16,18 @@ NC='\033[0m'
 export KEYS_PATH=/etc/casper/validator_keys
 if [ ! -f ${KEYS_PATH}/secret_key.pem -a ! -f ${KEYS_PATH}/public_key.pem -a ! -f ${KEYS_PATH}/public_key_hex ]; then
     echo "Casper-client keys not located in /etc/casper/validator_keys."
-    read -p "Please input directory of casper-keys: " KEY_DIR
+    read -p "Please input directory of casper-keys: " KEYS_PATH
 fi
 
-public_hex_path="${KEY_DIR}/public_key_hex"
+public_hex_path="${KEYS_PATH}/public_key_hex"
 echo $public_hex_path
 INPUT_HEX="$1"
 
-TARGET_HOST="127.0.0.1"
 
-
-if nc -z -v localhost 8888; echo $? = 1
-then
-    KNOWN_ADDRESSES=$(sudo -u casper cat /etc/casper/$CASPER_VERSION/config.toml | grep known_addresses)
-    KNOWN_VALIDATOR_IPS=$(grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' <<< "$KNOWN_ADDRESSES")
-    IFS=' ' read -r TARGET_HOST _REST <<< "$KNOWN_VALIDATOR_IPS"
-    echo "This is a known validator IP: $TARGET_HOST"
-    
-    echo "Set Target Host as $TARGET_HOST, as localhost is not a casper-node."
-elif nc -z -v localhost 8888; echo $? = 0
-then
-    TARGET_HOST="127.0.0.1"
-fi
+KNOWN_ADDRESSES=$(sudo -u casper cat /etc/casper/$CASPER_VERSION/config.toml | grep known_addresses)
+KNOWN_VALIDATOR_IPS=$(grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' <<< "$KNOWN_ADDRESSES")
+IFS=' ' read -r TARGET_HOST _REST <<< "$KNOWN_VALIDATOR_IPS"
+echo "This is a known validator IP: $TARGET_HOST"
 
 function getPublicHex() {
 
