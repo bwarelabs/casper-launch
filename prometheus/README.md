@@ -60,6 +60,7 @@ cd casper-launch/prometheus
 sudo bash start_instrumentation.sh
 ```
 - This can be run as root or any other user with sudo privileges
+- **IMPORTANT: IF YOU WISH TO MAKE ANY CHANGES TO THE CONFIG FILES, YOU SHOULD ALWAYS RESTART THE SERVICES BY RUNNING THE _start_instrumentation.sh_ SCRIPT, NOT BY MANUALLY RESTARTING EACH SERVICE (e.g. _systemctl restart prometheus.service_)**
 - Check if everything has run correctly by accessing http://YOUR_NODE_PUBLIC_IP:9090/ - here you should be able to see the appropiate targets and alerting rules
 
 ## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) Contact
