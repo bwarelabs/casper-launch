@@ -35,6 +35,7 @@
   - **METRICS_PATH** - PATH where the metrics of your node are exposed (default, _status_)
   - **SCRAPE_INTERVAL** - interval between metrics calls (value in seconds - default, _10_)
   - **DEFAULT_PORT** - PORT where the Casper Prometheus Grabber exposes information (default, _8123_)
+  - **GRABBER_USER** - USER under which the service should be launched (recommended - same user that launches the casper process)
 - _install_casper_prometheus_grabber.sh_ - downloads the binaries and configures the service
 - _install_prerequisites_ - installs prerequisites necessary for the build
 
