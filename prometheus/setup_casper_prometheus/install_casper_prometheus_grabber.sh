@@ -22,7 +22,7 @@ Description=Casper Prometheus Exporter Service
 [Service]
 ExecStart=/usr/bin/twistd3 -y /usr/local/etc/casper-prometheus-exporter/StatusNodePromGrab.py -d /usr/local/etc/casper-prometheus-exporter --nodaemon --pidfile=
 WorkingDirectory=/usr/local/etc/casper-prometheus-exporter
-User=local
+User=${GRABBER_USER}
 Restart=always
 
 [Install]
