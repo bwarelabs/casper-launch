@@ -1,0 +1,4 @@
+export CASPER_VERSION=1_1_0
+export USERNAME=local
+export HOMEDIR=/home/${USERNAME}
+export AMOUNT="899000000000"
