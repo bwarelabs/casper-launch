@@ -10,11 +10,17 @@
   - **STARTDIR** - start directory of the scripts (basically, full path of the _casper-validator_ directory as downloaded on your machine)
   - **CASPER_VERSION** - version which should be used (please, follow the [#mainnet-announcements](https://discord.gg/Cb3Gue5V67) or [#testnet-announcements](https://discord.gg/WYsDJpSstr) channels on Discord, according to your usecase, to see the latest updates)
   - **CASPER_NETWORK** - Casper network (_casper_ for **Mainnet** and _casper-test_ for **Testnet**)
-- _.stake_env_ - this contains important environment variables which are needed in order to properly start a bonding request
+- _.bonding_env_ - this contains important environment variables which are needed in order to properly start a bonding request
+  - **CASPER_VERSION** - same as above
+  - **USERNAME** - same as above
+  - **HOMEDIR** - same as above
   - **AMOUNT** - amount of CSPR tokens to be bonded by yourself (staking amount which you provide from your own wallet)
   - **DELEGATION_RATE** - fee for delegators (percentage of rewards which you will receive when producing a new block when having tokens delegated from others)
-- _.delegate_env_ - this contains important environment variables which are needed in order to properly start a delegation request
-  - **AMOUNT** - amount of CSPR tokens to be delegated (delegation amount which you provide from your own wallet)
+- _.unbonding_env_ - this contains important environment variables which are needed in order to properly start a delegation request
+  - **CASPER_VERSION** - same as above
+  - **USERNAME** - same as above
+  - **HOMEDIR** - same as above
+  - **AMOUNT** - amount of CSPR tokens to unbound (staking amount which you wish to unbond from you own wallet)
 - _check_balance.sh_ - main script that checks balance for a known validator (either from local machine OR by providing a public key hex) - either provide a PUBLIC_KEY_HEX of a known validator, or the script will try and find the PUBLIC_KEY_HEX from your local machine (if you are running your own validator)
 - _start_all.sh_ - main script that starts the deployment of the Casper node
 - _start_bonding.sh_ - main script that starts the bonding request
@@ -56,25 +62,24 @@ sudo bash start_all.sh
 ```
 cd casper-launch/casper-validator
 ```
-- Carefully complete _.stake_env_ with the appropiate values, depending on your use case
+- Carefully complete _.bonding_env_ with the appropiate values, depending on your use case
 - From the ${START_DIR}, run the following command in your terminal:
 ```
 sudo bash start_bonding.sh
 ```
 - This can be run as root, the user handling is made inside the scripts
 
-## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) How to start a delegation request
+## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) How to start an unbonding request
 - Go to casper-launch/casper-validator directory
 ```
 cd casper-launch/casper-validator
 ```
-- Carefully complete _.delegate_env_ with the appropiate values, depending on your use case
+- Carefully complete _.unbonding_env_ with the appropiate values, depending on your use case
 - From the ${START_DIR}, run the following command in your terminal:
 ```
-sudo bash start_delegating.sh
+sudo bash start_unbonding.sh
 ```
 - This can be run as root, the user handling is made inside the scripts
-- **IMPORTANT:** You will be prompted with the PUBLIC_KEY_HEX of the validator which you want to delegate to
 
 ## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) Contact
 
