@@ -24,7 +24,7 @@
 - _check_balance.sh_ - main script that checks balance for a known validator (either from local machine OR by providing a public key hex) - either provide a PUBLIC_KEY_HEX of a known validator, or the script will try and find the PUBLIC_KEY_HEX from your local machine (if you are running your own validator)
 - _start_all.sh_ - main script that starts the deployment of the Casper node
 - _start_bonding.sh_ - main script that starts the bonding request
-- _start_delegating.sh_ - main script that starts a delegation request (to a known validator)
+- _start_unbonding.sh_ - main script that starts the unbonding request
 - _utils_ - directory which contains helper scripts
 
 ## ![alt text](https://github.com/bwarelabs/casper-launch/blob/main/docs/BWARE-icon.png) Contents of utils directory
